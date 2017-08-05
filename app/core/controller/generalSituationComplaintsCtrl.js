@@ -19,19 +19,19 @@ app.controller("generalSituationComplaintsCtrl", function ($scope, apiComplaintS
             $scope.situation = {
                 status: "RUIM",
                 color: "label-danger"
-            };
+            }
 
         } else if(date == 1){
             $scope.situation = {
                 status: "REGULAR",
                 color: "label-primary"
-            };
+            }
         } else {
             $scope.situation = "";
             $scope.situation = {
                 status: "BOM",
                 color: "label-success"
-            };
+            }
                     
         };
 
