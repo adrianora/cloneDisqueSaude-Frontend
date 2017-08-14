@@ -37,6 +37,7 @@ app.controller("generalSituationComplaintsCtrl", function ($scope, apiComplaintS
 
     };
 
-    getGeneralSituationComplaints();
+    //nao chamar agora
+    //getGeneralSituationComplaints();
 
 });
