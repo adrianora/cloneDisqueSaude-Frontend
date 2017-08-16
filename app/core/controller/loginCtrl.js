@@ -5,7 +5,7 @@ app.controller("loginCtrl", function ($scope,$http){
 	//por enquanto
 	$scope.autenticar = function(login,senha){
 		$scope.userLogado = {};
-		console.log($scope.userLogado);
+		console.log($scope.isLogado());
 		alert("Adm logado!");
 	};
 
