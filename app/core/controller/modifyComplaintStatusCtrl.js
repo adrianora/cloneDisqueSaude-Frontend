@@ -10,4 +10,5 @@ app.controller("modifyComplaintStatusCtrl", function ($scope,apiComplaintService
         });
     };
 
+    $scope.listAllComplaints();
 });

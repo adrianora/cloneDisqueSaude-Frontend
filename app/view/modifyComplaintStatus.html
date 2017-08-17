@@ -1,27 +1,50 @@
 <div class="container">
-    <div class="row-fluid">
+    <div class="row-fluid" ng-repeat="complaint in complaints">
         <div class="col-lg-12">
             <div class="row" ng-if="complaint">
-                <div class="col-lg-12">
+                <div class="col-lg-12">                    
                     <h2 class="text-info">{{complaint.descricao}}</h2>
-                    <p>Situação: <span class="badge">{{complaint.situacao}}</span></p>
-                    <p>Solicitante</p>
-                    <ul class="list-group">
-                        <li class="list-group-item"><b>Nome: </b> {{complaint.solicitante.nome}}</li>
-                        <li class="list-group-item"><b>Email: </b> {{complaint.solicitante.email}}</li>
-                        <li class="list-group-item"><b>Rua: </b> {{complaint.endereco.rua}}</li>
-                        <li class="list-group-item"><b>Cidade: </b> {{complaint.endereco.cidade}}</li>
-                        <li class="list-group-item"><b>UF: </b> {{complaint.endereco.uf}}</li>
-                    </ul>
-                    <hr>
+                    <button id="posicao" type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal{{$index}}">
+                        <i class="glyphicon glyphicon-edit"></i> Modificar Queixa </button>                    
+                        <p>Situação: <span class="badge">{{complaint.situacao}}</span></p>
+                        <p>Solicitante</p>
+                        <ul class="list-group">
+                            <li class="list-group-item"><b>Nome: </b>{{complaint.solicitante.nome}}</li>
+                            <li class="list-group-item"><b>Email: </b>{{complaint.solicitante.email}}</li>
+                            <li class="list-group-item"><b>Rua: </b>{{complaint.endereco.rua}}</li>
+                            <li class="list-group-item"><b>Cidade: </b>{{complaint.endereco.cidade}}</li>
+                            <li class="list-group-item"><b>UF: </b>{{complaint.endereco.uf}}</li>
+                        </ul>
+                        <hr>
+                    </div>
                 </div>
             </div>
+
+            <div id="myModal{{$index}}" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">{{complaint.descricao}}</h4>
+                    </div>
+                    <div class="modal-body">
+                        <fieldset>
+                            <div class="form-group row">
+                                <label for="inputDescription" class="col-sm-2 col-form-label">Comentário:</label>
+                                <div class="col-sm-10">
+                                    <textarea class="form-control" name="description"></textarea>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal" ng-model="comentario" ng-click="">Fechar Queixa</button>
+                    </div>
+                </div>
+
+            </div>
         </div>
+
     </div>
 </div>
-
-<button type="submit" class="btn btn-primary btn-lg" ng-click="listAllComplaints()">
-                        <i class="fa fa-search"></i> Pesquisar Queixas
-                    </button>
-
-{{complaints}}
