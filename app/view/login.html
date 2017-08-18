@@ -8,17 +8,17 @@
                     <div class="form-group row">
                         <label for="inputLogin" class="col-sm-2 col-form-label">Login:</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" name="login" id="inputLogin" ng-model="login">
+                            <input type="text" class="form-control" name="login" id="inputLogin" ng-model="admin.email">
                         </div>
                     </div>
                     <!--Senha field-->
                     <div class="form-group row">
                         <label for="inputSenha" class="col-sm-2 col-form-label">Senha:</label>
                         <div class="col-sm-10">
-                            <input type="email" class="form-control" name="senha" id="inputSenha" ng-model="senha">
+                            <input type="text" class="form-control" name="senha" id="inputSenha" ng-model="admin.senha">
                         </div>
                     </div>
-                    <button type="button" class="btn btn-block" ng-click="autenticar(login,senha)">Entrar</button>
+                    <button type="submit" class="btn btn-block" ng-click="autenticar(admin)">Entrar</button>
                 </fieldset>
             </div>
          </form>

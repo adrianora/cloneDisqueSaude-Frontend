@@ -1,20 +1,21 @@
 app.controller("loginCtrl", function ($scope,$http){
 
-	$scope.userLogado;
+	$scope.admLogado;
 
 	//por enquanto
-	$scope.autenticar = function(login,senha){
-		$scope.userLogado = {};
+	$scope.autenticar = function(adm){
+		$scope.admLogado = adm;
+		console.log(adm);
 		console.log($scope.isLogado());
 		alert("Adm logado!");
 	};
 
 	$scope.deslogar = function(){
-		$scope.userLogado = undefined;
+		$scope.admLogado = undefined;
 	};
 
 	$scope.isLogado = function(){
-		return !!$scope.userLogado;
+		return !!$scope.admLogado;
 	};
 
 	/*

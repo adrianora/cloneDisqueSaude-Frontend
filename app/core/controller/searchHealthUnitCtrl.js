@@ -5,8 +5,7 @@ app.controller("searchHealthUnitCtrl", function ($scope, apiUnidadeService) {
     $scope.searchHU = function (neighborhood) {
         
             apiUnidadeService.getApiUnidade(neighborhood).then(function success(response) {
-                $scope.units = [];
-                $scope.units.push(response.data);
+                $scope.units = response.data;
                 console.log("Foram encontradas Unidades de saúde");
                 console.log(response.data);
             }, function failed(error) {
