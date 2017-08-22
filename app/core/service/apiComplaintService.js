@@ -8,10 +8,6 @@ app.service("apiComplaintService",function($http){
 		return $http.get("http://localhost:5000/SpringBootRestApi/api/queixa/" + id);
 	};
 
-	this.getGeralComplaintSituation = function(){
-		return $http.get("http://localhost:5000/SpringBootRestApi/api/geral/situacao");
-	};
-
 	this.getAllApiComplaints = function(){
 		return $http.get("http://localhost:5000/SpringBootRestApi/api/queixa");
 	};

@@ -1,0 +1,19 @@
+<div class="jumbotron col-md-6 col-md-offset-3">
+	<div class="row">
+		<h3>Situação atual da prefeitura: 
+			<span class="label {{situation.color}}"> {{situation.status}}</span>
+		</h3>
+	</div>
+</div>
+
+<div class="jumbotron col-md-6 col-md-offset-3">
+	<div class="row">
+		<h3>Alterar situação para: 
+			<div class="btn-group" role="group" aria-label="...">
+				<button type="button" class="btn btn-success" ng-disabled="getSituation() == 'NORMAL'" ng-click="changeCityHallSituation(1)">Normal</button>
+				<button type="button" class="btn btn-primary" ng-disabled="getSituation() == 'EXTRA'" ng-click="changeCityHallSituation(2)">Extra</button>
+				<button type="button" class="btn btn-danger" ng-disabled="getSituation() == 'CAOS'" ng-click="changeCityHallSituation(3)">Caos</button>
+			</div>
+		</h3>
+	</div>
+</div>

@@ -1,11 +1,10 @@
-app.controller("generalSituationComplaintsCtrl", function ($scope, apiComplaintService) {
+app.controller("generalSituationComplaintsCtrl", function ($scope, apiPrefeituraService) {
 
     $scope.situation = "";
 
-    var getGeneralSituationComplaints = function (neighborhood) {
-            apiComplaintService.getGeralComplaintSituation().then(function success(response) {
-                console.log(response.data.obj);
-                getSituation(response.data.obj);
+    var getGeneralSituationComplaints = function () {
+            apiPrefeituraService.getGeralComplaintSituation().then(function success(response) {
+                getSituation(response.data);
             }, function failed(error) {
                 console.log("Erro na busca de unidades");
                 console.log(error.data.errorMessage);
@@ -14,14 +13,14 @@ app.controller("generalSituationComplaintsCtrl", function ($scope, apiComplaintS
 
     var getSituation = function(date){
 
-        if(date == 0){
+        if(date == "RUIM"){
 
             $scope.situation = {
                 status: "RUIM",
                 color: "label-danger"
             }
 
-        } else if(date == 1){
+        } else if(date == "REGULAR"){
             $scope.situation = {
                 status: "REGULAR",
                 color: "label-primary"
@@ -37,7 +36,6 @@ app.controller("generalSituationComplaintsCtrl", function ($scope, apiComplaintS
 
     };
 
-    //nao chamar agora
-    //getGeneralSituationComplaints();
+    getGeneralSituationComplaints();
 
 });

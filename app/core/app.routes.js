@@ -25,6 +25,9 @@ app.config(function ($routeProvider) {
     }).when("/modifyComplaintStatus", {
         templateUrl : "view/modifyComplaintStatus.html",
         controller : "modifyComplaintStatusCtrl"
+    }).when("/changeCityHallSituation", {
+        templateUrl : "view/changeCityHallSituation.html",
+        controller : "changeCityHallSituationCtrl"
     }).otherwise({
         redirectTo: '/'
     });
