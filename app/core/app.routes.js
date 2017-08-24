@@ -28,6 +28,9 @@ app.config(function ($routeProvider) {
     }).when("/changeCityHallSituation", {
         templateUrl : "view/changeCityHallSituation.html",
         controller : "changeCityHallSituationCtrl"
+    }).when("/addHealthUnity", {
+        templateUrl : "view/addHealthUnity.html",
+        controller : "addHealthUnityCtrl"
     }).otherwise({
         redirectTo: '/'
     });

@@ -4,16 +4,18 @@
             <div class="row" ng-if="complaint">
                 <div class="col-lg-12">                    
                     <h2 class="text-info">{{complaint.descricao}}</h2>
-                    <button id="posicao" type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal{{$index}}">
+                    <button id="posicao" type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal{{$index}}" ng-if="complaint.situacao == 'ABERTA'">
                         <i class="glyphicon glyphicon-edit"></i> Modificar Queixa </button>                    
                         <p>Situação: <span class="badge">{{complaint.situacao}}</span></p>
-                        <p>Solicitante</p>
+                        <p><b>Solicitante:</b></p>
                         <ul class="list-group">
                             <li class="list-group-item"><b>Nome: </b>{{complaint.solicitante.nome}}</li>
                             <li class="list-group-item"><b>Email: </b>{{complaint.solicitante.email}}</li>
                             <li class="list-group-item"><b>Rua: </b>{{complaint.endereco.rua}}</li>
                             <li class="list-group-item"><b>Cidade: </b>{{complaint.endereco.cidade}}</li>
                             <li class="list-group-item"><b>UF: </b>{{complaint.endereco.uf}}</li>
+                            <li class="list-group-item" ng-if="!!complaint.tipoAnimal"><b>Tipo Animal: </b>{{complaint.tipoAnimal}}</li>
+                            <li class="list-group-item" ng-if="!!complaint.comentario"><b>Comentario: </b>{{complaint.comentario}}</li>
                         </ul>
                         <hr>
                     </div>
@@ -33,13 +35,13 @@
                             <div class="form-group row">
                                 <label for="inputDescription" class="col-sm-2 col-form-label">Comentário:</label>
                                 <div class="col-sm-10">
-                                    <textarea class="form-control" name="description"></textarea>
+                                    <textarea class="form-control" name="description" ng-model="complaint.comentario"></textarea>
                                 </div>
                             </div>
                         </fieldset>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-danger" data-dismiss="modal" ng-model="comentario" ng-click="">Fechar Queixa</button>
+                        <button type="button" class="btn btn-danger" data-dismiss="modal" ng-model="comentario" ng-click="fecharQueixa(complaint)">Fechar Queixa</button>
                     </div>
                 </div>
 

@@ -11,4 +11,13 @@ app.controller("modifyComplaintStatusCtrl", function ($scope,apiComplaintService
     };
 
     $scope.listAllComplaints();
+
+    $scope.fecharQueixa = function(complaint){
+    	apiComplaintService.closeComplaint(complaint).then(function successCallback(response) {
+    		$scope.listAllComplaints();
+    		alert("Queixa fechada com sucesso.");
+        }, function errorCallback(error) {
+            console.log(error);
+        });
+    }
 });

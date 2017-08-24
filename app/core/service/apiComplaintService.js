@@ -12,4 +12,8 @@ app.service("apiComplaintService",function($http){
 		return $http.get("http://localhost:5000/SpringBootRestApi/api/queixa");
 	};
 
+	this.closeComplaint = function(complaint){
+		return $http.put("http://localhost:5000/SpringBootRestApi/api/queixa/fechamento", JSON.stringify(complaint));
+	};
+
 });
