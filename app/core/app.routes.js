@@ -31,6 +31,9 @@ app.config(function ($routeProvider) {
     }).when("/addHealthUnity", {
         templateUrl : "view/addHealthUnity.html",
         controller : "addHealthUnityCtrl"
+    }).when("/createdUnit/:id", {
+        templateUrl : "view/sucessPageUnit.html",
+        controller : "messageCreatedComplaintCtrl"
     }).otherwise({
         redirectTo: '/'
     });
