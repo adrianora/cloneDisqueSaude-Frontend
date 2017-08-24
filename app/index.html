@@ -29,7 +29,7 @@
                                 <li><a href="#!searchcomplaint"><i class="fa fa-search"></i> Pesquisar Queixa</a></li>
                                 <li><a href="#!/complaint/register"><i class="fa fa-plus"></i> Adicionar Queixa</a></li>
                                 <li ng-show="!isLogado()"><a href="#!login"><i class="glyphicon glyphicon-log-in"></i> Login</a></li>
-                                <li id="login" ng-show="true" class="ng-hide">
+                                <li id="login" ng-show="isLogado()" class="ng-hide">
                                     <div class="dropdown">
                                         <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Opções de Admin
                                         <span class="caret"></span></button>
@@ -39,7 +39,7 @@
                                             <li><a href="#!modifyComplaintStatus"><i class="glyphicon glyphicon-edit"></i> Modificar status de uma queixa</a></li>
                                             <li><a href="#!addHealthUnity"><i class="fa fa-plus"></i> Adicionar uma unidade de saúde</a></li>
                                             <li><a href="#!changeCityHallSituation"><i class="glyphicon glyphicon-edit"></i> Modificar a situação da prefeitura</a></li>
-                                            <li><a href="#!"><i class=" glyphicon glyphicon-off"></i> Deslogar</a></li>
+                                            <li><a href="#!" ng-click="deslogar()"><i class=" glyphicon glyphicon-off"></i> Deslogar</a></li>
                                         </ul>
                                      </div>
                                 </li>
@@ -81,6 +81,6 @@
         <script src="core/service/apiAveragePerPatientService.js"></script>
         <script src="core/service/apiUnidadeService.js"></script>
         <script src="core/service/apiPrefeituraService.js"></script>
-        
+        <script src="core/service/loginService.js"></script>
     </body>
 </html>

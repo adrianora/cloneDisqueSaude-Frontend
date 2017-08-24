@@ -1,48 +1,24 @@
-app.controller("loginCtrl", function ($scope,$http){
-
-	$scope.admLogado;
-
-	//por enquanto
-	$scope.autenticar = function(adm){
-		$scope.admLogado = adm;
-		console.log(adm);
-		console.log($scope.isLogado());
-		alert("Adm logado!");
-	};
-
-	$scope.deslogar = function(){
-		$scope.admLogado = undefined;
-	};
+app.controller("loginCtrl", function ($scope,loginService){
 
 	$scope.isLogado = function(){
-		return !!$scope.admLogado;
+		return loginService.getStatus();
 	};
 
-	/*
-	$scope.autenticar = function(login,senha){
-		var adms = $scope.searchAveragePerPatient();
-		var encontrado = false;
-		for (var i = 0; i < adms.length; i++) {
-			adm = adms[i];
-			if(adm.login === login && adm.senha === senha){
-				$scope.userLogado = adm;
-				alert("Administrador logado!");
-				encontrado = true;
-				break;
-			}
-		}
-		if(!encontrado){
-			alert("Administrador não encontrado");
-		}
-
+	$scope.autenticar = function(adm){
+		$scope.login(adm);
 	}
-	*/
 
-	$scope.searchAveragePerPatient = function () {
-        $http.get("http://localhost:5000/SpringBootRestApi/administradores").then(function successCallback(response) {
-            return response.data.obj;
+	$scope.deslogar = function(){
+		loginService.setStatus(false);
+	}
+
+	$scope.login = function (adm) {
+        loginService.autenticar(adm).then(function successCallback(response) {
+        	loginService.setStatus(true);
+     		alert("Login efetuado com sucesso");
         }, function errorCallback(error) {
-            console.log("Unidade Não Encontrada");
+        	alert("Email ou senha incorretos");
+            console.log("Falha no login");
         });
     }
 
