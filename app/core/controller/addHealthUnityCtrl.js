@@ -16,6 +16,7 @@ app.controller("addHealthUnityCtrl", function ($scope, apiUnidadeService,toastr,
 
 	$scope.setTipo = function(tipo){
 		$scope.tipo = tipo;
+		toastr.info("Unidade alterada para " + tipoDaUnidade(tipo));
 	}
 
 	var tipoDaUnidade = function(){

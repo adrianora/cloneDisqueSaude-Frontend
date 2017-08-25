@@ -33,7 +33,7 @@ app.config(function ($routeProvider) {
         controller : "addHealthUnityCtrl"
     }).when("/createdUnit/:id", {
         templateUrl : "view/sucessPageUnit.html",
-        controller : "messageCreatedComplaintCtrl"
+        controller : "messageCreatedUnitCtrl"
     }).otherwise({
         redirectTo: '/'
     });

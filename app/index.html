@@ -29,7 +29,7 @@
                                 <li><a href="#!searchcomplaint"><i class="fa fa-search"></i> Pesquisar Queixa</a></li>
                                 <li><a href="#!/complaint/register"><i class="fa fa-plus"></i> Adicionar Queixa</a></li>
                                 <li ng-show="!isLogado()"><a href="#!login"><i class="glyphicon glyphicon-log-in"></i> Login</a></li>
-                                <li id="login" ng-show="true" class="ng-hide">
+                                <li id="login" ng-show="isLogado()" class="ng-hide">
                                     <div class="dropdown">
                                         <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Opções de Admin
                                         <span class="caret"></span></button>

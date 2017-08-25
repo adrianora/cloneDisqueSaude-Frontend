@@ -10,7 +10,7 @@ app.controller("changeCityHallSituationCtrl", function ($scope,apiPrefeituraServ
                 console.log("Erro na MUDANCA da situacao da prefeitura");
                 console.log(error.data.errorMessage);
             });
-		toastr.success("Situação da prefeitura alterada para " + newStatus.situacao);
+		toastr.info("Situação da prefeitura alterada para " + newStatus.situacao);
 	}
 
 	var getNewStatus = function(status){
