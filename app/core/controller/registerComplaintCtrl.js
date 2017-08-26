@@ -3,7 +3,7 @@ app.controller("registerComplaintCtrl", function ($scope, apiComplaintService, t
 	$scope.tipoQueixa = "alimento";
 
     $scope.registerComplaint = function (complaint) {
-    		complaint.type = $scope.tipoQueixa;
+    		complaint.tipo = $scope.tipoQueixa;
             apiComplaintService.postApiComplaint(complaint).then(function success(response) {
                 toastr.success("Queixa adicionada com sucesso!");
                 $location.path('/createdcomplaint/' + response.data.id);

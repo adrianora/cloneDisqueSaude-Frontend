@@ -17,7 +17,7 @@
  						<div class="form-group row">
  							<label for="inputBairro" class="col-sm-2 col-form-label">Bairro:</label>
  							<div class="col-sm-10">
- 								<input type="text" class="form-control" name="bairro" id="inputBairro" ng-model="unidade.bairro">
+ 								<input type="text" class="form-control" name="bairro" id="inputBairro" ng-model="unidade.endereco.bairro">
  							</div>
  						</div>
  						
@@ -36,7 +36,7 @@
  						</div>
 
  					</fieldset>
- 					<button ng-disabled= "!unidade.bairro || !unidade.atendentes || !unidade.taxaDiariaAtendimento" 
+ 					<button ng-disabled= "!unidade.endereco.bairro || !unidade.atendentes || !unidade.taxaDiariaAtendimento" 
  					class="btn btn-primary btn-block" ng-click="cadastrarUnidade(unidade)">Adicionar Unidade</button>
  				</div>
  			</form>

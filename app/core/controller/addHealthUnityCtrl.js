@@ -3,8 +3,7 @@ app.controller("addHealthUnityCtrl", function ($scope, apiUnidadeService,toastr,
 	$scope.tipo = "posto";
 
 	$scope.cadastrarUnidade = function(unidade){
-		unidade.type = $scope.tipo;
-		unidade.tipo = tipoDaUnidade();
+		unidade.tipo = $scope.tipo;
             apiUnidadeService.cadastrarUnidade(unidade).then(function success(response) {
                 toastr.success("Unidade cadastrada com sucesso!");
                 $location.path('/createdUnit/' + response.data.id);
