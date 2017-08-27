@@ -15,6 +15,7 @@ app.controller("registerComplaintCtrl", function ($scope, apiComplaintService, t
 
     $scope.setTipo = function(tipo){
     	$scope.tipoQueixa = tipo;
+        toastr.info("Tipo mudado para " + tipo);
     }
 
 });

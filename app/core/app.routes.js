@@ -37,6 +37,9 @@ app.config(function ($routeProvider) {
     }).when("/addSpeciality", {
         templateUrl : "view/addSpeciality.html",
         controller : "addSpecialityCtrl"
+    }).when("/search_speciality", {
+        templateUrl : "view/searchSpeciality.html",
+        controller : "searchSpecialityCtrl"
     }).otherwise({
         redirectTo: '/'
     });
