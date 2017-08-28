@@ -1,11 +1,11 @@
 app.service("apiUnidadeService",function($http){
 
 	this.getApiUnidade = function(neighborhood){
-		return $http.get("http://localhost:5000/SpringBootRestApi/api/unidade/busca/" + neighborhood);
+		return $http.get("https://clonedisquesaudebackend.herokuapp.com/SpringBootRestApi/api/unidade/busca/" + neighborhood);
 	};
 
 	this.cadastrarUnidade = function(unidade){
-		return $http.post("http://localhost:5000/SpringBootRestApi/api/unidade", JSON.stringify(unidade));
+		return $http.post("https://clonedisquesaudebackend.herokuapp.com/SpringBootRestApi/api/unidade", JSON.stringify(unidade));
 	};
 
 
